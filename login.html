@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ورود</title>
+</head>
+<body>
+
+<h2>ورود به سیستم</h2>
+
+<form action="/login" method="POST">
+    <label>نام کاربری:</label><br>
+    <input type="text" name="username" required><br><br>
+
+    <label>رمز عبور:</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <button type="submit">ورود</button>
+</form>
+
+<br>
+<a href="/register">ثبت‌نام</a>
+
+<br><br>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for msg in messages %}
+      <li>{{ msg }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+</body>
+</html>

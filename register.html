@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ثبت‌نام</title>
+</head>
+<body>
+
+<h2>صفحه ثبت‌نام</h2>
+
+<form action="/register" method="POST">
+    <label>نام کاربری:</label><br>
+    <input type="text" name="username" required><br><br>
+
+    <label>رمز عبور:</label><br>
+    <input type="password" name="password" required><br><br>
+
+    <button type="submit">ثبت‌نام</button>
+</form>
+
+<br>
+<a href="/login">ورود</a>
+
+<br><br>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+    {% for msg in messages %}
+      <li>{{ msg }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+</body>
+</html>
